@@ -34,13 +34,13 @@ fun HomeScreen(navController: NavController) {
             .addOnSuccessListener { snapshot ->
                 Log.d("HomeScreen", "Snapshot recibido: $snapshot")
                 if (snapshot.exists()) {
-                    // Intentamos el mapeo a User (lo ideal)
+                    // Intentamos el mapeo a User
                     val mapped = snapshot.getValue(User::class.java)
                     if (mapped != null) {
                         dbUser.value = mapped
                         Log.d("HomeScreen", "Usuario mapeado: $mapped")
                     } else {
-                        // Fallback: leer campos manualmente (por si el mapeo falla)
+                        // leer campos manualmente
                         val nombre = snapshot.child("nombre").getValue(String::class.java) ?: ""
                         val dni = snapshot.child("dni").getValue(String::class.java) ?: ""
                         val email = snapshot.child("email").getValue(String::class.java) ?: ""

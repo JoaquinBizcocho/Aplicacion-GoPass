@@ -107,7 +107,7 @@ fun LoginScreen(navController: NavController) {
              // Botón de texto que navega a la pantalla de registro si el usuario no tiene cuenta.
 
             TextButton(onClick = { navController.navigate("register") }) {
-                Text("¿No tienes cuenta? Regístrate")
+                Text("Registrarse")
             }
         }
     }

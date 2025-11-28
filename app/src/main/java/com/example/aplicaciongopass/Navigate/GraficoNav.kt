@@ -1,6 +1,7 @@
 package com.example.aplicaciongopass.Navigate
 
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
+
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -16,12 +17,19 @@ fun AppNavGraph(navController: NavHostController? = null) {
     val internalNavController = navController ?: rememberNavController()
 
     // Obtenemos la instancia de FirebaseAuth
-    val auth = FirebaseAuth.getInstance()
+    val firebaseAuth = FirebaseAuth.getInstance()
+    var currentUser by remember { mutableStateOf(firebaseAuth.currentUser) }
+
+    LaunchedEffect(Unit) {
+        firebaseAuth.addAuthStateListener { auth ->
+            currentUser = auth.currentUser
+        }
+    }
 
     // Determinamos la pantalla inicial
-    val startDestination = if (auth.currentUser != null) "home" else "login"
+    val startDestination = if (currentUser != null) "home" else "login"
 
-    // Usamos startDestination dinámico aquí 👇
+    // Usamos startDestination dinámico
     NavHost(
         navController = internalNavController,
         startDestination = startDestination
