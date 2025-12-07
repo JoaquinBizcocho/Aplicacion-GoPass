@@ -99,7 +99,7 @@ fun HomeScreen(navController: NavController) {
                 },
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text("Ver elementos compartidos")
+                Text("Elementos")
             }
 
             Spacer(modifier = Modifier.height(8.dp))

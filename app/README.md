@@ -15,8 +15,8 @@ Home: Muestra el correo electronico mediante una bienvenida, el nombre del usuar
 
 Se ha añadido la funcionalidad de gestión de elementos con un control de acceso basado en roles (`"admin"` o `"usuario"`), tal como se especifica en la actividad.
 
-Modelo de Datos**: Implementación del modelo `Elemento` en la base de datos Realtime Database en el nodo `elementos`.
-Permisos de Rol**:
+Modelo de Datos: Implementación del modelo `Elemento` en la base de datos Realtime Database en el nodo `elementos`.
+Permisos de Rol:
   Todos los usuarios (`"usuario"` y `"admin"`) pueden ver la lista completa de elementos (`ElementListScreen`).
   Solo los administradores (`"admin"`) tienen acceso a las funciones de Crear, Editar y Eliminar elementos, con lógica de acceso condicional en la interfaz y en el código.
 Vistas Implementadas**:
@@ -71,10 +71,13 @@ Uso de la Aplicacion
 
 Credenciales de Prueba
 Email:
+
 admin@gmail.com --- admin
-a@gmail.com ----- usuario
+
+a@gmail.com --- usuario
 
 Contraseña:
+
 123456
 
 Puedes registrar nuevos usuarios para probar la app.
